@@ -8,6 +8,35 @@
 </head>
 <body>
     <h1>My Library</h1>
+
+
+    <button id="new-book-btn">New Book</button>
+
+<dialog id="book-dialog">
+  <form id="book-form" method="dialog">
+    <h2>Add a new book</h2>
+
+    <label for="book-name">Title</label>
+    <input id="book-name" name="name" type="text" required />
+
+    <label for="book-author">Author</label>
+    <input id="book-author" name="author" type="text" required />
+
+    <label for="book-pages">Pages</label>
+    <input id="book-pages" name="pages" type="number" min="1" step="1" required />
+
+    <label class="row">
+      <input id="book-read" name="read" type="checkbox" />
+      <span>Already read</span>
+    </label>
+
+    <div class="actions">
+      <button type="button" id="cancel-btn">Cancel</button>
+      <button type="submit">Add Book</button>
+    </div>
+  </form>
+</dialog>
+
     <div id="library" class="library"></div>
 
 

@@ -42,3 +42,42 @@ addBookToLibrary("The Hobbit", "Tolkien", 295, true);
 addBookToLibrary("1984", "George Orwell", 328, false);
 
 displayBooks();
+
+
+
+const newBookBtn = document.getElementById("new-book-btn");
+const dialog = document.getElementById('book-dialog');
+const form = document.getElementById('book-form');
+const cancelBtn = document.getElementById('cancel-btn');
+
+newBookBtn.addEventListener("click", ()=>{
+    dialog.showModal();
+      setTimeout(() => document.getElementById('book-name').focus(), 0);
+});
+
+cancelBtn.addEventListener('click', () => {
+  form.reset();
+  dialog.close();
+});
+
+// Intercetta il submit per evitare il refresh/pagina che tenta di inviare a un server
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // <<-- fondamentale
+
+  const name = document.getElementById('book-name').value.trim();
+  const author = document.getElementById('book-author').value.trim();
+  const pages = parseInt(document.getElementById('book-pages').value, 10);
+  const read = document.getElementById('book-read').checked;
+
+  if (!name || !author || !pages || pages < 1) {
+    // piccola validazione extra lato JS
+    alert('Please fill all fields correctly.');
+    return;
+  }
+
+  addBookToLibrary(name, author, pages, read);
+  displayBooks();
+
+  form.reset();
+  dialog.close();
+});

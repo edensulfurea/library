@@ -29,3 +29,36 @@ h1 {
 .book-card p {
     margin: 4px 0;
 }
+#new-book-btn { padding: 8px 12px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; }
+
+dialog::backdrop { background: rgba(0,0,0,.25); }
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+#book-form {
+  display: grid;
+  gap: 12px;
+}
+#book-form input[type="text"],
+#book-form input[type="number"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+#book-form .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#book-form .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
