@@ -62,3 +62,65 @@ dialog {
   gap: 8px;
   margin-top: 8px;
 }
+/* Bottoni nelle card */
+.book-card button {
+  appearance: none;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;      /* spazio tra i bottoni */
+  transition: 
+    transform .06s ease,
+    box-shadow .2s ease,
+    background-color .2s ease,
+    border-color .2s ease;
+}
+
+.book-card button:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.book-card button:active {
+  transform: translateY(0);
+}
+
+.book-card button:focus-visible {
+  outline: 2px solid #4c9ffe;
+  outline-offset: 2px;
+}
+
+/* Variante: Toggle read */
+.book-card .toggle-btn {
+  border-color: #bcd;
+  background: #f7fbff;
+}
+.book-card .toggle-btn:hover {
+  background: #eef6ff;
+}
+
+/* Variante: Remove (stile “danger” soft) */
+.book-card .remove-btn {
+  border-color: #f3c2c2;
+  background: #fff5f5;
+}
+.book-card .remove-btn:hover {
+  background: #ffeaea;
+}
+
+/* Mobile: bottoni a tutta larghezza uno sotto l’altro */
+@media (max-width: 420px) {
+  .book-card button {
+    width: 100%;
+    margin-right: 0;
+  }
+  .book-card button + button {
+    margin-top: 8px;
+  }
+}
