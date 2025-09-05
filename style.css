@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    padding: 24px;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+}
+
+.book-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.book-card p {
+    margin: 4px 0;
+}
